@@ -1,6 +1,7 @@
 
 import Form from '../Forms'
 import List from '../List'
+
  
 import estilos from './estilos.module.scss'
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <List/>
       </div>
 
+     
     </div>
   );
 }

@@ -1,5 +1,8 @@
 import estilos from './estilos.module.scss'
 import Item from './Item'
+import Cronometro from '../Cronometro'
+
+
 
 const tarefas =[
 {
@@ -26,8 +29,9 @@ export default function List(){
 className={estilos.container}>
 
 
-  <h2 className={estilos.title}>Estudo do dia</h2>
-
+  
+<div className={estilos.boxitem}>
+<h2 className={estilos.title}>Estudo do dia</h2>
   <ul>
 {tarefas.map((tarefas,id)=>(
 
@@ -40,7 +44,10 @@ className={estilos.container}>
 ))}
 
   </ul>
-
+ 
+  </div>
+  <div><Cronometro/></div>
+  
 </aside>
 
   )
