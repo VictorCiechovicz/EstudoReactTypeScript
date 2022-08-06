@@ -6,7 +6,7 @@ export default function Button({texto}:{texto:string}){
 
    <button
    className={estilos.button}  
-  
+ 
    >{texto}</button>
   )
 }
