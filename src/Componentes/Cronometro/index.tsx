@@ -10,9 +10,7 @@ export default function Cronometro(){
 <h1
 className={estilos.title}>Escolha um card e inicie o cronometro!</h1>
 
-<div
-className={estilos.relogio}
->
+<div className={estilos.relogio}>
   <Relogio />
 </div>
 

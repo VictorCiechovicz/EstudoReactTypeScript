@@ -6,9 +6,7 @@ return(
 
   <li className={estilos.item}>
 
-     <h3  className={estilos.titleitem} >
-       {tarefa}
-       </h3>
+     <h3 className={estilos.titleitem} >{tarefa}</h3>
     <span>{time}</span>
   </li>
 )
