@@ -45,7 +45,9 @@ export default function Form(){
           </div>
         <div
         className={estilos.button}> 
-          <Button/>
+          <Button
+          texto="Clicar"
+          />
           </div>
       
          </div>

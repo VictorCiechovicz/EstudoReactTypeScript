@@ -1,4 +1,5 @@
 import estilos from './estilos.module.scss'
+import Item from './Item'
 
 const tarefas =[
 {
@@ -16,7 +17,6 @@ const tarefas =[
   tarefa:'TypeScript',
   time:'02:00:00'
 },
-
 ]
 
 export default function List(){
@@ -31,15 +31,11 @@ className={estilos.container}>
   <ul>
 {tarefas.map((tarefas,id)=>(
 
-             <li 
-             className={estilos.item}
-             key={id}>
-                <h3 
-                className={estilos.titleitem} >
-                  {tarefas.tarefa}
-                  </h3>
-               <span>{tarefas.time}</span>
-             </li>
+            <Item 
+            key={id}
+            tarefa={tarefas.tarefa}
+            time={tarefas.time}
+              />
 
 ))}
 
