@@ -1,17 +1,12 @@
-import React from "react";
+import estilos from './estilos.module.scss'
 
 export default function Button(){
- 
+
   return(
 
    <button
-   style={{
-    backgroundColor:'black',
-    width:80,
-    height:30,
-    borderRadius:10,
-   
-   }}
-   >aquiii</button>
+   className={estilos.button}  
+  
+   >clicar</button>
   )
 }

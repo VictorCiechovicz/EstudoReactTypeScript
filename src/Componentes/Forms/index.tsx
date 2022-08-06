@@ -1,15 +1,23 @@
-import React from "react";
+
 import Button from '../Button'
+import estilos from './estilos.module.scss'
 
 export default function Form(){
   return(
 
-       <form>
-         <div>
-              <label htmlFor="tarefa">
+       <form >
+     <div className={estilos.container}>
+         <div
+         className={estilos.content}
+         >
+              <label 
+              className={estilos.title}
+              htmlFor="tarefa">
               Adicione um novo estudo
               </label>
+
               <input
+              className={estilos.boxinput}
               name="tarefa"
               type="text"
               id="tarefa"
@@ -18,10 +26,13 @@ export default function Form(){
               />
          </div>
 
-          <div>
-           <label htmlFor="tempo">
-            Tempo
+          <div className={estilos.content}>
+           <label 
+          className={estilos.title}
+           htmlFor="tempo">
+            Tempo:
             <input 
+           className={estilos.boxinputtime}
             type="time"
             step="1"
             name="tempo"
@@ -32,7 +43,12 @@ export default function Form(){
             />
            </label>
           </div>
-         <Button/>
+        <div
+        className={estilos.button}> 
+          <Button/>
+          </div>
+      
+         </div>
          </form>
  )
 }

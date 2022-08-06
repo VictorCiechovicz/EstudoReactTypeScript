@@ -1,4 +1,4 @@
-import React from "react";
+import estilos from './estilos.module.scss'
 
 const tarefas =[
 {
@@ -22,15 +22,22 @@ const tarefas =[
 export default function List(){
   return(
 
-<aside>
+<aside
+className={estilos.container}>
 
-  <h2>Estudo do dia</h2>
+
+  <h2 className={estilos.title}>Estudo do dia</h2>
 
   <ul>
 {tarefas.map((tarefas,id)=>(
 
-             <li key={id}>
-                <h3>{tarefas.tarefa}</h3>
+             <li 
+             className={estilos.item}
+             key={id}>
+                <h3 
+                className={estilos.titleitem} >
+                  {tarefas.tarefa}
+                  </h3>
                <span>{tarefas.time}</span>
              </li>
 
