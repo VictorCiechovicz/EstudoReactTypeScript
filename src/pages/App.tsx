@@ -5,7 +5,7 @@ import Lista from '../components/Lista';
 import style from './App.module.scss';
 import { ITarefa } from '../Types/tarefa';
 
-function App() {
+export default function App() {
  
  const[tarefas,setTarefas] =  useState<ITarefa[]>([])
  const[selecionado,setSelecionado] = useState<ITarefa>()
@@ -13,11 +13,26 @@ function App() {
  function selecionaTarefa(tarefaSelecionada:ITarefa){
 setSelecionado(tarefaSelecionada)
 setTarefas(tarefasAnteriores => tarefasAnteriores.map(tarefa => ({
+
   ...tarefa,
   selecionado: tarefa.id === tarefaSelecionada.id ? true : false
 })))
  }
-
+function finalizaTarefa(){
+  if (selecionado){
+    setSelecionado(undefined)
+    setTarefas(tarefasAnteriores => tarefasAnteriores.map(tarefa =>{
+      if(tarefa.id === selecionado.id){
+        return{
+          ...tarefa,
+          selecionado:false,
+          completado:true,
+        }
+      }
+      return tarefa
+    }))
+  }
+}
   return (
     <div className={style.AppStyle}>
       <Formulario setTarefas={setTarefas}/>
@@ -25,9 +40,11 @@ setTarefas(tarefasAnteriores => tarefasAnteriores.map(tarefa => ({
       tarefas={tarefas}
       selecionaTarefa={selecionaTarefa}
       />
-      <Cronometro selecionado={selecionado} />
+      <Cronometro 
+      selecionado={selecionado}
+      finalizarTarefa={finalizaTarefa}
+      />
     </div>
   );
 }
 
-export default App;
